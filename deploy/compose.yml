@@ -1,0 +1,28 @@
+# Host nginx serves the static dist and terminates TLS; the api container only
+# listens on the loopback interface. PANEL_USERNAME / PANEL_PASSWORD seed
+# auth.json on first boot only and can be left unset afterwards.
+# PANEL_DATA_KEY (64 hex chars) optionally supplies the credential encryption
+# key from outside the data directory.
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    container_name: token-panel-api
+    restart: unless-stopped
+    environment:
+      PORT: "8000"
+      DATA_DIR: /data
+      PANEL_USERNAME: ${PANEL_USERNAME:-}
+      PANEL_PASSWORD: ${PANEL_PASSWORD:-}
+      PANEL_DATA_KEY: ${PANEL_DATA_KEY:-}
+    volumes:
+      - ./data:/data
+    ports:
+      - "127.0.0.1:8010:8000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8000/functions/v1/app/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

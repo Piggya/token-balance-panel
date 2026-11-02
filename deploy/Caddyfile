@@ -1,0 +1,26 @@
+{
+	{$DOMAIN} {
+		basic_auth {
+			{$AUTH_USER} {$AUTH_HASH}
+		}
+		encode gzip
+
+		handle /functions/v1/app/* {
+			reverse_proxy api:8000
+		}
+
+		handle {
+			root * /srv
+			try_files {path} /index.html
+			file_server
+		}
+
+		header {
+			Strict-Transport-Security "max-age=31536000; include-subdomains"
+			X-Content-Type-Options "nosniff"
+			X-Frame-Options "DENY"
+			Referrer-Policy "same-origin"
+			-Server
+		}
+	}
+}

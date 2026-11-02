@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
+}
+
+:root {
+  --background: #f5f6f8;
+  --foreground: #171a1f;
+  --card: #ffffff;
+  --card-foreground: #171a1f;
+  --popover: #ffffff;
+  --popover-foreground: #171a1f;
+  --primary: #171a1f;
+  --primary-foreground: #f8f9fb;
+  --secondary: #e9ecf1;
+  --secondary-foreground: #171a1f;
+  --muted: #eef0f4;
+  --muted-foreground: #5d6572;
+  --accent: #e8ebf2;
+  --accent-foreground: #171a1f;
+  --destructive: #dc2626;
+  --border: rgba(23, 26, 31, 0.09);
+  --input: rgba(23, 26, 31, 0.13);
+  --ring: rgba(84, 104, 216, 0.45);
+  --brand: #5468d8;
+  --brand-foreground: #f8f9fb;
+  --chart-1: #5468d8;
+  --chart-2: #0f766e;
+  --chart-3: #b45309;
+  --chart-4: #dc2626;
+  --chart-5: #7c3aed;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #171a1f;
+  --sidebar-primary: #171a1f;
+  --sidebar-primary-foreground: #f8f9fb;
+  --sidebar-accent: #e8ebf2;
+  --sidebar-accent-foreground: #171a1f;
+  --sidebar-border: rgba(23, 26, 31, 0.09);
+  --sidebar-ring: rgba(84, 104, 216, 0.4);
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #dc2626;
+  --info: #0369a1;
+  --glow: rgba(84, 104, 216, 0.14);
+  --grid: rgba(23, 26, 31, 0.05);
+  --selection: rgba(84, 104, 216, 0.2);
+  --selection-foreground: #171a1f;
+  --scrollbar: rgba(23, 26, 31, 0.18);
+  --aurora-1: rgba(126, 148, 240, 0.55);
+  --aurora-2: rgba(125, 211, 252, 0.45);
+  --aurora-3: rgba(167, 139, 250, 0.4);
+}
+
+[data-theme="dark"] {
+  --background: #0a0b0e;
+  --foreground: #eceef2;
+  --card: #11141a;
+  --card-foreground: #eceef2;
+  --popover: #151922;
+  --popover-foreground: #eceef2;
+  --primary: #f0f2f5;
+  --primary-foreground: #0d0f13;
+  --secondary: #1a1e26;
+  --secondary-foreground: #eceef2;
+  --muted: #171b22;
+  --muted-foreground: #98a0ad;
+  --accent: #1c212b;
+  --accent-foreground: #eceef2;
+  --destructive: #f87171;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.13);
+  --ring: rgba(139, 156, 249, 0.55);
+  --brand: #8b9cf9;
+  --brand-foreground: #0d0f13;
+  --chart-1: #8b9cf9;
+  --chart-2: #5eead4;
+  --chart-3: #f5b544;
+  --chart-4: #f87171;
+  --chart-5: #a78bfa;
+  --sidebar: #0d0f14;
+  --sidebar-foreground: #eceef2;
+  --sidebar-primary: #f0f2f5;
+  --sidebar-primary-foreground: #0d0f13;
+  --sidebar-accent: #1c212b;
+  --sidebar-accent-foreground: #eceef2;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: rgba(139, 156, 249, 0.4);
+  --success: #4ade80;
+  --warning: #fcd34d;
+  --danger: #f87171;
+  --info: #7dd3fc;
+  --glow: rgba(139, 156, 249, 0.12);
+  --grid: rgba(255, 255, 255, 0.045);
+  --selection: rgba(139, 156, 249, 0.3);
+  --selection-foreground: #eef1ff;
+  --scrollbar: rgba(255, 255, 255, 0.16);
+  --aurora-1: rgba(92, 110, 205, 0.8);
+  --aurora-2: rgba(20, 120, 112, 0.68);
+  --aurora-3: rgba(110, 78, 172, 0.66);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-aurora-1: var(--aurora-1);
+  --color-aurora-2: var(--aurora-2);
+  --color-aurora-3: var(--aurora-3);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", SFMono-Regular, Menlo,
+    Consolas, "Liberation Mono", monospace;
+}
+
+@keyframes aurora-drift-a {
+  0%, 100% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(7%, 9%, 0) scale(1.12);
+  }
+}
+
+@keyframes aurora-drift-b {
+  0%, 100% {
+    transform: translate3d(5%, 6%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-8%, -6%, 0) scale(0.95);
+  }
+}
+
+@keyframes aurora-drift-c {
+  0%, 100% {
+    transform: translate3d(0, 8%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-5%, -8%, 0) scale(1.18);
+  }
+}
+
+.aurora-blob {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none !important;
+  }
+}
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--selection-foreground);
+}
+
+* {
+  scrollbar-color: var(--scrollbar) transparent;
+}

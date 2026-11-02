@@ -1,0 +1,60 @@
+{
+  "name": "token-balance-panel",
+  "version": "0.8.5",
+  "description": "自托管的 AI 平台 Token 余量看板：集中查看多个平台与账号的余额和额度。",
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "balance",
+    "dashboard",
+    "self-hosted",
+    "token-usage"
+  ],
+  "private": true,
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "scripts": {
+    "preinstall": "node scripts/check-node.mjs",
+    "predev": "node scripts/check-node.mjs",
+    "prebuild": "node scripts/check-node.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && node scripts/build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test \"tests/*.test.ts\"",
+    "dev:function": "deno run --allow-net=127.0.0.1:8000 dev/function-local.ts",
+    "check:function": "deno check functions/index.ts"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.7.0",
+    "@shadcn/react": "^0.3.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "cmdk": "^1.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "input-otp": "^1.4.2",
+    "lucide-react": "^1.31.0",
+    "radix-ui": "^1.6.7",
+    "react": "19.2.6",
+    "react-day-picker": "^10.0.1",
+    "react-dom": "19.2.6",
+    "react-hook-form": "^7.85.0",
+    "react-resizable-panels": "^4.12.2",
+    "recharts": "^3.8.0",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "3.6.0",
+    "vaul": "^1.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "tailwindcss": "4.2.1",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "5.9.3",
+    "vite": "8.0.16"
+  },
+  "type": "module"
+}

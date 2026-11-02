@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+*.tsbuildinfo
+.qoder-sites/
+.qoder-sites.json
+*.qoder.site
+.shots/
+.research/
+.idea/
+.vscode/
+
+# 运行时数据：auth.json、session-secret、data-key、accounts.json 等，禁止入库
+/.data/
+/data/
+/server/.data/
+/dev/.data/
+/deploy/data/
+
+# Qoder Sites 发布流程注入的平台 SDK，仓库不包含
+functions/_qoder/
