@@ -393,7 +393,7 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
     vendor: "BigModel · GLM",
     monogram: "GLM",
     accent: "#4d6bfe",
-    consoleUrl: "https://open.bigmodel.cn/usercenter/apikeys",
+    consoleUrl: "https://open.bigmodel.cn/console/overview",
     kind: "balance",
     currency: "CNY",
     defaultThreshold: 10,
@@ -432,8 +432,8 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
         },
       ],
       steps: [
-        "查额度：登录 open.bigmodel.cn，进入「API Keys」页面创建并复制 Key，粘贴到第一个输入框。",
-        "查余额：在浏览器 DevTools 的「应用 / Application」→ Cookie 中找到 bigmodel_token_production，复制它的值粘贴到第二个输入框。",
+        "查额度：登录 open.bigmodel.cn 控制台，进入「API Keys」页面创建并复制 Key，粘贴到第一个输入框。",
+        "查余额：打开控制台概览页（open.bigmodel.cn/console/overview），在浏览器 DevTools 的「应用 / Application」→ Cookie 中找到 bigmodel_token_production，复制它的值粘贴到第二个输入框。",
         "两种凭据只需填写一种，保存后立即查询；卡片会按凭据类型显示额度或余额。",
       ],
       notes: [

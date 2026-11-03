@@ -9,6 +9,7 @@
 - 更多平台接入（候选：阿里云百炼、火山方舟，均需云账号 AK/SK）
 - Qoder Sites 形态重新发布验证（凭据加密代码已就绪，见 v0.8.2）
 - 页脚备案号改为构建变量注入：源码不再包含具体备案号（`VITE_ICP_NUMBER`，见 `.env.example`），未设置时页脚只显示版权；自托管构建通过本地 `.env.local`（已 gitignore）保留备案信息，符合公开仓库与线上合规的双重要求。
+- 智谱 AI 的控制台入口改为控制台概览页（`https://open.bigmodel.cn/console/overview`），余额令牌的获取步骤也指向该页面。
 - 开源准备：新增 `SECURITY.md`、`CONTRIBUTING.md`、`THIRD_PARTY_NOTICES.md` 与 GitHub Actions CI；`.gitignore` 覆盖运行时 `data/`、`functions/_qoder/`、日志与编辑器目录，避免凭据和平台 SDK 误入库；README/docs 去除内部发布编号。
 - 依赖清理：移除未使用的 `zod`、`@hookform/resolvers`、`date-fns` 直接依赖（消除 GHSA-mrhx-c7xc-m3w5 高危告警），`npm audit --omit=dev` 为 0。
 
