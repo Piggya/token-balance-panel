@@ -2,7 +2,7 @@
 
 一个自托管优先的开源看板，用于集中展示多个 AI 平台的 Token 消耗与账户余量。单用户部署，凭据只保存在服务端，浏览器不接触任何平台 API Key。
 
-当前版本：**v0.8.5**（版本历史见 [docs/CHANGELOG.md](docs/CHANGELOG.md)）
+当前版本：**v0.8.6**（版本历史见 [docs/CHANGELOG.md](docs/CHANGELOG.md)）
 
 ## 功能概览
 

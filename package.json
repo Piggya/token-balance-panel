@@ -1,6 +1,6 @@
 {
   "name": "token-balance-panel",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "自托管的 AI 平台 Token 余量看板：集中查看多个平台与账号的余额和额度。",
   "license": "MIT",
   "keywords": [
